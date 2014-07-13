@@ -9,7 +9,11 @@ String là kiểu dữ liệu dùng để lưu trữ và thao tác với text tr
 - Một string được tạo bởi 1 cặp single quote hoặc double quote hoặc dùng từ khóa new (object string).
 - Ta có thể truy cập các chracter trong 1 string thông qua index của nó - String lúc này giống như 1 mảng các character.
 (You can access each character in a string with its position - index)
-- string có thể là object: Thông thường thì string là primitive type
+- string có thể là object: Thông thường thì string là primitive value với string được tạo theo cách literal. String cũng có thể được tạo bởi
+từ khóa new lúc này là chúng ta đang tạo 1 object string (không nên tạo string bằng cách này vì sẽ làm giảm performance của app).
+- properties và methods của string: Theo lẽ thông thường thì 1 primitive value như "John Smeeth" (1 string) không thể có properties và methods
+vì nó không phải là object. Nhưng trong javascript methods và properties có thể sử dụng với primitive value được vì javascript đối xử với
+primitive values như object.
 
 </body>
 </html>
