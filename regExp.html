@@ -2,9 +2,33 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Javascript regular expression</title>
 </head>
 <body>
+<pre>
+    - regular expression là một chuỗi các character tạo nên một search pattern. Khi ta muốn tìm kiếm dữ liệu trong 1 string ta có thể dùng search pattern này
+    để mô tả dữ lệu chúng ta đang muốn tìm. Một regular expression có thể chỉ là 1 single character hoặc là 1 pattern phức tạp.Regular express
+    có thể được dùng cho tất cả các dạng text search và text replace.
+    - Cú pháp: /pattern/modifier;
+    Ví dụ:  var patt = /jsmind/i;
+    Trong đó:   /jsmind/i là 1 regular expression
+                jsmind: là pattern
+                i: là modifier cho phép tìm kiếm case-sensitive
+    - Trong javascript regular expression thường được sử dụng với các method của string để phục vụ cho việc tìm kiếm và thay thế string.
+    2 methods thường được dùng với regular expression là:
+        + search(searchValue): Tìm kiếm 1 string trong 1 string và trả về vị trí tìm thấy đầu tiên.
+        + replace(searchValue, newValue): Tìm và thay thế string trong 1 string và trả về string sau khi thay thế.
+        searchValue trong 2 method trên có thể là string hoặc là regular expression (nếu là string sẽ được convert tự động sang regular expression khi thực thi).
 
+
+</pre>
+<script>
+    var str = 'Welcome to jsMind at website jsmind.net';
+    var search = str.search(/jsmind/i); // search case-sensitive
+    var replace = str.replace(/jsmind/gi,'congngheanninh');// search global and case-sesitive
+
+    console.log('search found at: ', search);
+    console.log('new string: ', replace);
+</script>
 </body>
 </html>
