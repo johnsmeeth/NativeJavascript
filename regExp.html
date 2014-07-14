@@ -51,6 +51,19 @@
 
     console.log('search found at: ', search);
     console.log('new string: ', replace);
+
+    function bracket() {
+        var great = 'Welcome to jsMind at website jsmind.net';
+        var result = document.getElementById('result');
+        var p1 = /[jsm]/gi;
+        var s = great.search(p1);
+        result.innerHTML = s;
+
+        console.log('s: ', s);
+
+    }
 </script>
+<button onclick="bracket()">bracket</button> <br />
+Result: <div id="result"></div>
 </body>
 </html>
