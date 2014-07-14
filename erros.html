@@ -5,10 +5,60 @@
     <title>Errors handler</title>
 </head>
 <body>
+<pre>
 - Try statement cho phép ta kiểm tra lỗi của 1 khối lệnh.
 - Catch statement cho phép ta bắt (xử lý) lỗi của khối lệnh.
 - Throw statement cho phép ta tạo 1 custom errors.
 - Finally statement cho phép ta thực thi code sau khi try và catch bất chấp kết quả.
+Quá trình chúng ta thực thi code sẽ có nhiều error xảy ra các error có thể do coder, errors due to wrong input, và nhiều lỗi không nhìn thấy khác.
+  
+</pre>
+Enter value between 5 and 10: <input id="input" type="text"/>
+<br /><button onclick="testThrow()">Test throw</button><button onclick="testFinally()">Test Finally</button><br />
+Custom errors by throw statement: <div id="result"></div>
+
+
+
+<script>
+    try {
+        iAmError('error'); // error by this method
+    } catch (e) {
+        console.log('Error occured: ', e.message);
+        console.log('Full error was catch: ', e);
+    }
+
+    // try catch throw
+    function testThrow() {
+        var result = document.getElementById('result');
+        var input = document.getElementById('input').value;
+
+        try {
+            result.innerHTML = "OK";
+            if( input == "") throw "Emty!";
+            if( isNaN(input) ) throw "Not a number";
+            if( input > 10 ) throw "Too high";
+            if( input < 5 ) throw "Too low";
+        } catch (err) {
+            result.innerHTML = err;
+        }
+    }
+
+    function testFinally() {
+        var result = document.getElementById('result');
+        var input = document.getElementById('input').value;
+
+        try {
+            result.innerHTML = "OK";
+            if( input == "" ) throw "Empty !";
+            if( isNaN(input) ) throw "Not a number";
+            if( input > 10 || input < 5 ) throw "Not between 5 and 10";
+        } catch (err) {
+            result.innerHTML = err;
+        } finally {
+            result.innerHTML += ", finnally executed !";
+        }
+    }
+</script>
 
 </body>
 </html>
