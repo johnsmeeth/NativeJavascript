@@ -19,8 +19,20 @@
         + search(searchValue): Tìm kiếm 1 string trong 1 string và trả về vị trí tìm thấy đầu tiên.
         + replace(searchValue, newValue): Tìm và thay thế string trong 1 string và trả về string sau khi thay thế.
         searchValue trong 2 method trên có thể là string hoặc là regular expression (nếu là string sẽ được convert tự động sang regular expression khi thực thi).
-    - Regular Expression Modifier:
-    - Regular Expression Pattern:
+    - Regular Expression Modifier:modiefier được dùng để thực hiện tìm kiếm case-sesitive hoặc tìm kiếm global.
+        + i: Tìm kiếm case-sensitive.
+        + g: Tìm kiếm global, thông thường khi tìm kiếm được 1 match đầu tiên thì sẽ dừng lại.
+        + m: multiline matching.
+    - Regular Expression Pattern: Cái này là cái phức tạp phết đây
+        + bracket: Dùng để tìm 1 range các ký tự.
+            * [abc]: Tìm bất kỳ ký tự, khoảng ký tự nào trong khoảng dấu []
+            * [0-9]: Tìm bất kỳ số nào trong khoảng từ 0 đến 9
+            * (x|y): Tìm bất kỳ cái nào match x hoặc y
+        + metacharacters: là các ký tự với ý nghĩa đặc biệt.
+            * \d: Tìm 1 digit
+            * \s: Tìm 1 space
+            * \b: Tím 1 match ở begin hoặc end của 1 word.
+            * \uxxxx: Tìm 1 ký tự unicode xác định bằng mã hexa xxxx
 
 
 </pre>
