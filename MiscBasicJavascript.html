@@ -7,11 +7,24 @@
 <body>
 1. Javascript Scope: Scope là tập hợp các biến ta có thể truy cập được hay nói cách khác scope chính là phạm vi hoạt động của các biến các hàm và các object.<br />
 2. Javascript variable: Mọi thứ trong javascript đều là object và object cũng là 1 biến nên suy ra mọi thứ trong javascript đều là biến.<br />
-3. Data types: Javascript có các primitive type như sau: String, Number, Boolean, Null, Undefined và các object type: Array, Object, Function.
+3. Data types: Javascript có các primitive type như sau: String, Number, Boolean, Null, Undefined và các object type: Array, Object, Function. <br />
+4. Hoisting: Là hành vi mặc định của javascript tự động di chuyển các DECLARATIONS (không hoist INITIALIZATIONS) lên trên cùng của scope. <br />
+5. Strict mode: Là chế độ thực thi code javascript, để thiết lập strict mode đặt câu lệnh "use strict" vào đầu file .js hoặc vào đầu của scope cần thiết lập strict mode. <br />
+<pre>
+6. Best Practices:
+    + Thay thế việc sử dụng từ khóa new bằng các literal sau: [], {}, "", /(:)/, false, 0, function() {}.
+    + Tránh sử dụng biến global.
+    + Luôn khai báo biến local.
+    + Sử dụng === thay cho ==.
+    + Không được kết thúc definition bằng dấu comma vì dấu comma chỉ dùng để kết thúc statement.
+    + Sử dụng param default.
+
+</pre>
 
 
 <script>
-    var str = "Thanh Nguyen";// strin
+    //declare variables
+    var str = "Thanh Nguyen";// string
     var no = 3.14; //number
     var bool = true;// boolean
     var n = null;// null
@@ -21,14 +34,20 @@
     var obj = {};
     var func = function() {};
 
-    console.log("typeof str: ", typeof str);
-    console.log("typeof no: ", typeof no);
-    console.log("typeof bool: ", typeof bool);
-    console.log("typeof n: ", typeof n);
-    console.log("typeof u: ", typeof u);
-    console.log("typeof arr: ", typeof arr);
-    console.log("typeof obj: ", typeof obj);
-    console.log("typeof func: ", typeof func);
+    // check real data type of a variable
+    function checkDataType(obj) {
+        return Object.prototype.toString.call(obj);
+    }
+
+    //console test
+    console.log("typeof str: ", typeof str, ', real data type: ', checkDataType(str));
+    console.log("typeof no: ", typeof no, ', real data type: ', checkDataType(no));
+    console.log("typeof bool: ", typeof bool, ', real data type: ', checkDataType(bool));
+    console.log("typeof n: ", typeof n, ', real data type: ', checkDataType(n));
+    console.log("typeof u: ", typeof u, ', real data type: ', checkDataType(u));
+    console.log("typeof arr: ", typeof arr,', real data type: ', checkDataType(arr));
+    console.log("typeof obj: ", typeof obj, ', real data type: ', checkDataType(obj));
+    console.log("typeof func: ", typeof func, ', real data type: ', checkDataType(func));
 
 </script>
 </body>
