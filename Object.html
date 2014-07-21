@@ -28,5 +28,47 @@ ngoại trừ Null và Undefined cũng được đối xử như object và có 
     - Method: là các action có thể thực hiện trên object.
     - Gọi method theo cú pháp: object.method().
 </pre>
+<pre>
+5. Create Javascript object:
+    - Trong javascript ta có thể define và create object theo các cách sau:
+        + Define và create single object sử dụng cú pháp literal. Cách này define và create object trong cùng 1 statement.
+        + Define và create single object sử dụng từ khóa new.
+        + Define một object constructor rồi create object theo object constructor đó. 2 cách trên chỉ tạo ra được single object còn cách này
+            cho phép ta tạo nhiều object trong cùng object type.
+        + ECMAScript 5  còn cho phép tạo 1 object bằng method Object.create().
+
+</pre>
+<pre>
+6. This keyword:
+    - Trong javascript this chính là object sở hữu javascript code trong scope đó. Value của this khi sử dụng trong function là object sở hữu
+        code function đó. Value của this khi sử dụng trong object là object sở hữu code của object đó (chính bản thân object đó).
+    - Từ khóa this là 1 object constructor không có value, nó chỉ là 1 thay thế cho 1 object mới.
+    - Giá trị của this sẽ trở thành new object khi constructor được dùng để tạo 1 object.
+    - Nhớ rằng this chỉ là 1 từ khóa không phải là 1 biến vì thế không thể thay đổi giá trị của nó được.
+</pre>
+<pre>
+7. Built-in Javascript Constructor:
+    - Javascript có 1 số built-in constructor cho các native object như sau:
+        + var a = new Object(); // a new object object
+        + var b = new String(); // a new String object
+        + var c = new Number(); // a new Number object
+        + var d = new Boolean(); // a new Boolean object
+        + var e = new Array(); // a new Array object
+        + var f = new RegExp(); //a new RegExp object
+        + var g = new Function(); // a new Function object
+        + var h = new Date(); // a new Date object
+</pre>
+<pre>
+8. Note:
+    - Chú ý rằng trong danh sách các built-in construct trên không có Math() object vì Math() object là global object nên từ khóa new không thể
+    sử dụng trên global object.
+    - Như ta đã thấy trong javascript có các phiên bản object của các primitive data type. Vì thế không có lý do gì mà ta phải tạo các object
+        phức tạp điều đó sẽ làm giảm performance của chương trình và hơn nữa các primitive value sẽ thực thi nhanh hơn so với các object
+        thực thụ được tạo bởi từ khóa new thay vào đó ta nên sử dụng các cú pháp literal với mỗi primitive data type.
+    - Nhớ rằng this chỉ là 1 từ khóa không phải là 1 biến vì thế không thể thay đổi giá trị của nó được.
+    - Javascript object là mutable: tức là các object trong javascript có thể bị thay đổi vì nó được đánh địa chỉ tham chiếu không phải giá trị
+        Vì thế mọi thao tác trên object đều làm thay đổi tới địa chỉ nhớ mà object đang chiếm giữ. Điều này có nghĩa là các biến trỏ tới địa chỉ nhớ
+        đó cũng thay đổi theo.
+</pre>
 </body>
 </html>
