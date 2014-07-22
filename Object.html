@@ -126,13 +126,36 @@ ngoại trừ Null và Undefined cũng được đối xử như object và có 
     person2.age = 26;
     person2.sex = "male";
 
-    function person3(name, age, sex) { // define object constructor
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
+    function person3(name, age, sex, national) { // define object constructor
+
+        //set default value for parameters
+        this.name = name || "Thanh Nguyen";
+        this.age = age || 26;
+        this.sex = sex || "male";
+        this.national = national || "Viet Nam";
+
+        //declare methods
+        this.getName = function() {
+          return this.name;
+        };
+        this.setName = function() {
+            this.name = prompt('Enter new name here');
+            //return this.name;// return current instance object that construct from object constructor
+            return person3.length; // return object constructor length
+        };
+        this.getThis = function() {
+          return this;
+        };
     } // not include comma at here because this is defination(declaration) not statement
     var thanhNguyen = new person3("Thanh Nguyen", 26, "male"); // create object use object person3 constructor
     var thieuNguyen = new person3("Thieu Nguyen", 19, "male"); // create object use object person3 constructor
+    console.log('=============================object=================================');
+    console.log('thanhNguyen.getName: ', thanhNguyen.getName());
+    console.log('thanhNguyen.setName: ', thanhNguyen.setName());
+    console.log('thanhNguyen.getThis: ', thanhNguyen.getThis());
+    console.log('thieuNguyen.getName: ', thieuNguyen.getName());
+    console.log('thieuNguyen.getThis: ', thieuNguyen.getThis());
+
 
 
 </script>
