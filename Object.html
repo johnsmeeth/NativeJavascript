@@ -60,7 +60,7 @@ ngoại trừ Null và Undefined cũng được đối xử như object và có 
 </pre>
 <pre>
 8. Note:
-    - Chú ý rằng trong danh sách các built-in construct trên không có Math() object vì Math() object là global object nên từ khóa new không thể
+    - Chú ý rằng trong danh sách các built-in constructor trên không có Math() object vì Math() object là global object nên từ khóa new không thể
     sử dụng trên global object.
     - Như ta đã thấy trong javascript có các phiên bản object của các primitive data type. Vì thế không có lý do gì mà ta phải tạo các object
         phức tạp điều đó sẽ làm giảm performance của chương trình và hơn nữa các primitive value sẽ thực thi nhanh hơn so với các object
@@ -70,5 +70,71 @@ ngoại trừ Null và Undefined cũng được đối xử như object và có 
         Vì thế mọi thao tác trên object đều làm thay đổi tới địa chỉ nhớ mà object đang chiếm giữ. Điều này có nghĩa là các biến trỏ tới địa chỉ nhớ
         đó cũng thay đổi theo.
 </pre>
+<script>
+    /**
+     * Declare and init variables
+     */
+    var str = "Thanh Nguyen";
+    var str2 = new String();
+    var no = 3.14;
+    var bool = false;
+    var n = null;
+    var u = undefined;
+
+    var arr = [];
+    var obj = {};
+    var reg = /()/;
+    var func = function() {};
+
+    /**
+     * check real data type of object
+     */
+    function getObjectType(obj) {
+        return Object.prototype.toString.call(obj);
+    }
+
+    /**
+     * console test
+     */
+    console.log('typeof str: ', typeof str, ', real data type: ', getObjectType(str));
+    console.log('typeof str2: ', typeof str2, ', real data type: ', getObjectType(str2));
+    console.log('typeof no: ', typeof no, ', real data type: ', getObjectType(no));
+    console.log('typeof bool: ', typeof bool, ', real data type: ', getObjectType(bool));
+    console.log('typeof n: ', typeof n, ', real data type: ', getObjectType(n));
+    console.log('typeof u: ', typeof u, ', real data type: ', getObjectType(u));
+    console.log('typeof arr: ', typeof arr, ', real data type: ', getObjectType(arr));
+    console.log('typeof obj: ', typeof obj, ', real data type: ', getObjectType(obj));
+    console.log('typeof reg: ', typeof reg, ', real data type: ', getObjectType(reg));
+    console.log('typeof func: ', typeof func, ', real data type: ', getObjectType(func));
+
+    /**
+     * Object
+     */
+    var person = { // define and create object literal
+        name: "Thanh Nguyen", // primitive value
+        age: 26,
+        state: { // object
+            married: false,
+            health: 'Strong',
+            skill: 'Starter'
+        },
+        sex: "male"
+    };
+
+    var person2 = new Object(); // defined and create object with new keyword
+    person2.name = "Thanh Nguyen";
+    person2.age = 26;
+    person2.sex = "male";
+
+    function person3(name, age, sex) { // define object constructor
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    } // not include comma at here because this is defination(declaration) not statement
+    var thanhNguyen = new person3("Thanh Nguyen", 26, "male"); // create object use object person3 constructor
+    var thieuNguyen = new person3("Thieu Nguyen", 19, "male"); // create object use object person3 constructor
+
+
+</script>
 </body>
 </html>
