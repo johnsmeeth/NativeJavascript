@@ -11,7 +11,7 @@ ngoại trừ Null và Undefined cũng được đối xử như object và có 
 <pre>
 2. Javascript object:
     - Một biến object trong javascript là 1 biến phức tạp gồm các property và các method.
-    - Nội dung của 1 object là tổng hợp của: Các property (có thể là primitive values, objects và cả 2) và các methods.
+    - Nội dung của 1 object là tổng hợp của: Các property (có thể là primitive values, objects hoặc cả 2) và các methods.
     - Trong javascript tất cả các value ngoại trừ các primitive value đều là object.
 </pre>
 <pre>
@@ -87,7 +87,7 @@ ngoại trừ Null và Undefined cũng được đối xử như object và có 
     var func = function() {};
 
     /**
-     * check real data type of object
+     * check real data type of an object
      */
     function getObjectType(obj) {
         return Object.prototype.toString.call(obj);
@@ -140,8 +140,8 @@ ngoại trừ Null và Undefined cũng được đối xử như object và có 
         };
         this.setName = function() {
             this.name = prompt('Enter new name here');
-            //return this.name;// return current instance object that construct from object constructor
-            return person3.length; // return object constructor length
+            return this.name;// return current instance object that construct from object constructor
+            //return person3.length; // return object constructor length
         };
         this.getThis = function() {
           return this;

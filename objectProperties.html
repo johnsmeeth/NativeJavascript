@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Object properties</title>
+</head>
+<body>
+Properties là phần quan trọng nhất của bất kỳ object javascript nào. <br />
+<pre>
+1. Javascript properties:
+    - Properties là những value liên kết với 1 object.
+    - 1 object là 1 collection không sắp thứ tự các properties
+    - Các properties có thể bị thay đổi, thêm mới hoặc bị xóa khỏi object nhưng một vài properties chỉ có thể đọc (read only).
+2. Accessing javascript properties: Truy cập các properties của object theo 1 trong các cách sau
+    - objectName.propertyName
+    - objectName["propertyName"]
+    - objectName[expression]; //expression must evaluate to a property name.
+3. for..in: Cú pháp này cho phép lặp qua các properties của 1 object.
+    - Khi truy cập các property trong thân vòng lặp này nên dùng cách truy cập của mảng: objectName["propertyName"].
+4. Add new properties:
+    - Có thể thêm properties vào 1 object đã tồn tại bằng cách gán giá trị cho nó
+    - Để thêm property vào 1 lớp ta dùng prototype
+5. Delete properties:
+    - Để xóa 1 properties (gồm cả name và value) khỏi 1 object (instance) ta dùng cú pháp: delete objectName.propertyName.
+    - Từ khóa delete để xóa properties khỏi 1 object (object class) không thể xóa được các inherited properties thay vào đó ta phải xóa prototype property,
+</pre>
+
+<script>
+    var person = {// define and create literal object
+        name: "Thanh Nguyen",
+        age: 26,
+        email: "network@congngheanninh.com",
+        tel: "0978222550",
+        national: "Viet Nam",
+        state: {
+            married: "married",
+            job: "it",
+            language: "English"
+        }
+    };
+
+    function people(name, age, sex, national) { //define object constructor
+        //set default value for parameters
+        this.name = name || "Thanh Nguyen";
+        this.age = age || 26;
+        this.sex = sex || "male";
+        this.national = national || "Viet Nam";
+
+        this.printMyself = function() {
+            for(x in this) {
+                console.log(this.constructor.name);
+            }
+        }
+    } // not end with comma at here because this is an defination
+
+
+    console.log("-------------loop through properties of person object using for..in statement-------------");
+    for(x in person) {
+        console.log("person.",x, ": ", person[x]);
+    }
+
+    delete person.age; // delete property on single object
+    console.log("Deleted person.age !");
+    printObjectProperties(person);
+
+    var obj = new people();
+    delete people.prototype.age;//delete property by prototype
+    console.log('Deleted prototype !')
+    printObjectProperties(obj);
+
+
+
+
+    function printObjectProperties(obj) {
+        for(x in obj) {
+            //console.log(obj, ".", x, ": ", obj[x]); // research the way can get name of obj that passed
+            console.log("person.", x, ": ", obj[x]);
+        }
+    }
+</script>
+</body>
+</html>
