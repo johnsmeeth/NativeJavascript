@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Javascript function definitions</title>
+</head>
+<body>
+<script>
+    // define Function declaration
+    function sumary(a, b) { return a + b} // not end by comma
+
+    // Define Function expression
+    var total = function(a, b) { return a + b}; // ending with comma
+
+    // test result
+    console.log('function declaration: ', sumary(2, 3), 'function expression: ', total(2, 3));
+
+    // define self-invoking function
+    (function() {console.log('I am a self-invoke function');})(); //self-invoking function
+
+    console.log('Sumary toString: ', sumary.toString(),'total toString: ', total.toString());
+</script>
+</body>
+</html>

@@ -6,13 +6,23 @@
 </head>
 <body>
 <pre>
-Function trong javascript được define bằng từ khóa new. Ta có thể sử dụng 1 trong 2 cách sau để define 1 function:
-    1. function declaration: loại này có cú pháp như sau: function functionName(param1, param2...){}. Đây là function được khai báo rồi sử dụng sau
-    Vì thế cú pháp này sẽ không có dấu comma ở cuối vì dấu comma chỉ dùng để phân tách các executable statement, còn ở đây ta chỉ declare rồi
-    sử dụng sau.
-    2. function expression: Loại function này được định nghĩa bằng expression ví dụ: var x = function() {}; đây là 1 expression function, loại này
-    phải có dấu comma vì expression là 1 executable statement. Với function expression thì người ta hay dùng 1 function vô danh gán cho 1 biến vì thế
-    function này sau này sẽ được sử dụng thông qua tên biến chứa nó.
+    1.Define function: Function trong javascript được define bằng từ khóa new. Ta có thể sử dụng 1 trong 2 cách sau để define 1 function:
+        - function declaration: loại này có cú pháp như sau: function functionName(param1, param2...){}. Đây là function được khai báo rồi sử dụng sau
+        Vì thế cú pháp này sẽ không có dấu comma ở cuối vì dấu comma chỉ dùng để phân tách các executable statement, còn ở đây ta chỉ declare rồi
+        sử dụng sau.
+        - function expression: Loại function này được định nghĩa bằng expression ví dụ: var x = function() {}; đây là 1 expression function, loại này
+        phải có dấu comma vì expression là 1 executable statement. Với function expression thì người ta hay dùng 1 function vô danh gán cho 1 biến vì thế
+        function này sau này sẽ được sử dụng thông qua tên biến chứa nó.
+    2. Self-invoking function:
+        - Self-invoking function là 1 loại function expression.
+        - 1 self-invoking expression là 1 expression tự động chạy (không cần call, invoke - call = invoke).
+        - 1 Function expression sẽ tự chạy khi expression đó theo sau là cặp dấu ().
+        - Ta không thể self-invoke 1 function declaration.
+        - Ta phải thêm parentheses xung quanh function để chỉ định function đó là 1 function expression.
+    3. Function are objects:
+        - typeof trả về function nhưng 1 javascript function giống 1 object hơn. vì nó có cả property và method.
+        - 1 function là 1 property của 1 object sẽ trở thành method của object đó.
+        - function để tạo ra object là object constructor.
 
 </pre>
 </body>
