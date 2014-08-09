@@ -16,8 +16,20 @@
         - Object.prototype là mức top của prototype chain.
         - Tất cả các javascript objects(Date, function, object, array, regexp...) đều kế thừa từ Object.prototype.
     2. Create object prototype:
-        - Để tạo 1 object prototype chuẩn ta dùng object constructor function (<a href="Object.html#objectConstructor">More...</a>).
+        - Để tạo 1 object prototype chuẩn ta dùng object constructor function (<a href="ObjectDefinition.html#objectConstructor">More...</a>).
         - Để tạo các object mới có prototype là object constructor function ta dùng từ khóa new (Khi này ta nói constructor function là prototype của các object được tạo từ nó).
+    3. Adding properties and methods to objects:
+        - Trong thực tế nhiều khi ta muốn thực hiện:
+            + Thêm mới các properties (hoặc methods) vào MỘT object đã tồn tại ta dùng cú pháp: objectName.newPropertyName/newMethodName = value/function;
+            + Thêm mới các properties (hoặc methods) vào TẤT CẢ các object đã tồn tại có cùng 1 kiểu dữ liệu (ví dụ tất cả các string object),
+            để làm được điều này phải add property và method mới vào prototype của các objects này.
+            + Thêm mới các properties (hoặc methods) vào MỘT object prototype ta phải thêm vào object constructor function của object đó,
+            hoặc sử dụng thuộc tính prototype (<a href="#prototypeProperty">Tham khảo mục 4 bên dưới...</a>)
+            việc này cũng sẽ ảnh hưởng tới tất cả các object cùng prototype cách này cũng áp dụng cho yêu cầu bên trên.
+    <a id="prototypeProperty">4. Using the PROTOTYPE property:</a>
+        - Thuộc tính prototype cho phép ta add thêm các properties/method vào 1 exist prototype.
+
+    4. Chú ý: Khi thêm mới properties/methods vào object/prototype thứ tự ưu tiên áp dụng trên 1 object sẽ là exist object > prototype.
 
 </pre>
 </body>

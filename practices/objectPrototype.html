@@ -19,9 +19,29 @@
     var putin = new person('Vladimir Putin', 62, 'Male');
 
     // console.log test
-    console.log('an instance object obama: ', obama);
-    console.log('Prototype of obama: ', obama.prototype);
-    console.log('Prototype of putin: ', putin.prototype);
+    console.log('Constructor function person: ', person);
+    console.log('Prototype of person objects: ', person.name);
+    console.log('Prototype of obama: ', obama.__proto__.constructor);
+    console.log('Prototype of putin: ', putin.__proto__.constructor);
+
+    // adding new properties/methods to an exist object.
+    obama.nationality = 'America'; // This will has priority greater than using prototype.
+    console.log('obama object after add new nationality property: ', obama);
+
+    /**
+     * adding new properties/methods to prototype (all exist objects of a given type)
+     * method 1: add direct into object constructor function (go to object constructor function above to add more you want).
+     * method 2: using prototype property
+     */
+    person.prototype.nationality = 'Viet Nam';
+    person.prototype.job = 'Persident';
+
+    console.log('----------- object after add properties/methods to prototype -----------');
+    console.log('Obama: ', obama);
+    console.log('Putin: ', putin);
+
+
+
 </script>
 </body>
 </html>
