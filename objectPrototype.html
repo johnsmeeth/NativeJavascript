@@ -12,7 +12,13 @@
 
     1. Javascript prototype:
         - Mọi object trong javascript được tạo theo cú pháp literal hoặc từ khóa new Object() đều kế thừa từ 1 proptotype gọi là Object.prototype.
-        -
+        - Object được tạo bởi new Date() sẽ kế thừa Date.prototype.
+        - Object.prototype là mức top của prototype chain.
+        - Tất cả các javascript objects(Date, function, object, array, regexp...) đều kế thừa từ Object.prototype.
+    2. Create object prototype:
+        - Để tạo 1 object prototype chuẩn ta dùng object constructor function (<a href="Object.html#objectConstructor">More...</a>).
+        - Để tạo các object mới có prototype là object constructor function ta dùng từ khóa new (Khi này ta nói constructor function là prototype của các object được tạo từ nó).
+
 </pre>
 </body>
 </html>

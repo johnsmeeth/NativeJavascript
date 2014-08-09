@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Object prototype</title>
+</head>
+<body>
+<script>
+    // define object constructor function
+    function person(name, age, sex) {
+        this.name = name || 'Thanh Nguyen';
+        this.age = age || 26;
+        this.sex = sex || 'male';
+
+    }
+
+    // create new objects from person's objects prototype
+    var obama = new person('Barack Obama', 56, 'Male');
+    var putin = new person('Vladimir Putin', 62, 'Male');
+
+    // console.log test
+    console.log('an instance object obama: ', obama);
+    console.log('Prototype of obama: ', obama.prototype);
+    console.log('Prototype of putin: ', putin.prototype);
+</script>
+</body>
+</html>
