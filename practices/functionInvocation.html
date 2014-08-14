@@ -2,9 +2,67 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Function invocation</title>
 </head>
 <body>
+<script>
+    // invokem a function as function
+    function add(a, b) {
+        var sum = a + b;
+        console.log('add run: ', sum);
+        return this;
+    }
 
+    console.log('add(2, 3): ', add(2, 3));
+    console.log('add(3, 4): ', window.add(3, 4));
+
+
+    // invoke a function as a method
+    var person = {
+        name: 'Thanh Nguyen',
+        age :26,
+        getName: function() {
+            return this;
+        }
+    };
+
+    console.log('person.getName(): ', person.getName()); // person
+
+
+    // invoke a function with a function constructor
+    function people(name, age, sex) {
+        this.name = name || "John Smeeth";
+        this.age = age || 26;
+        this.sex = sex || "male";
+
+        this.getThis = function() {
+            return this;
+        }
+    }
+
+    var juliet = new people("Juliet", 29, "female");
+    var romeo = new people();
+    console.log("juliet.getThis(): ", juliet.getThis());
+    console.log("romeo.getThis(): ", romeo.getThis());
+
+
+    // invoke a function with a function method
+    console.log("------------- invoke a function with a function method -------------------");
+    function multiple(a, b) {
+
+        console.log('multiple function belong: ', this);
+
+        return a * b;
+    }
+
+    var testObj1 = {name: 'Mafia', nationality: 'Columbia'};
+    var testObj2 = {name: 'Binladen', nationality: 'Iraq'};
+    var arr = [3, 4];
+
+   console.log('call testObj1 method: ', multiple.call(testObj1, 2, 3));
+   console.log('call testObj2 method: ', multiple.call(testObj2, 2, 3));
+   console.log('apply testObj1 method: ', multiple.apply(testObj1, arr));
+    console.log('apply testObj2 method: ', multiple.apply(testObj2, arr));
+</script>
 </body>
 </html>

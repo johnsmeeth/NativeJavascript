@@ -35,7 +35,7 @@ thì this sẽ là object sở hữu function đó.
     - Giá trị của this:
         + trong strict mode: giá trị của this chính là owner object được truyền vào là tham số đầu tiên, ngay cả khi arguments không phải là object.
         + non-strict mode: Nếu owner object là null hoặc undefined thì this sẽ mang giá trị global object (window).
-    => bản chất của 2 method này là cho phép ta thiết lập value của this và invoke 1 function như là 1 method mới của 1 existing object.
+    => bản chất của 2 method này là cho phép ta thiết lập value của this bằng cách chỉ định ownerObject và invoke 1 function như là 1 method mới của 1 existing object.
     - cú pháp:
         functionName.call/apply(ownerObject, params); // Gọi functionName như là new method của ownerObject, nôm na kiểu như ownerobject.functionName
                                                 // với các params
