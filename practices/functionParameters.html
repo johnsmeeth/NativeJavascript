@@ -12,6 +12,54 @@
     }
 
     person('a', 2, 'male', 656);
+
+    // arguments object
+    function findMax() {
+        var i, max = 0;
+
+        for(i = 0; i < arguments.length; i++) {
+            max = (max < arguments[i]) ? arguments[i] : max;
+        }
+
+        return max;
+    }
+
+    function sumary() {
+        var i, sum = 0;
+
+        for(i = 0; i < arguments.length; i++) {
+            sum += arguments[i];
+        }
+
+        return sum;
+    }
+
+    console.log('findMax: ', findMax(2, 3, 4, 6));
+    console.log('sumary: ', sumary(2, 3, 4, 5));
+
+    // passed value and passed referencesss
+    function add(a, b) {
+        a++;
+        b++;
+
+        return a + b;
+    }
+
+    function changeObj(obj) {
+        obj.name = "John Smeeth";
+        obj.more = "More detail";
+    }
+
+    var x = 5, y = 6;
+    var obj = {
+        x: 5,
+        y: 6
+    }
+    console.log('add(x, y): ', add(x, y),', x: ', x, ', y: ', y);
+    console.log('add(obj.x, obj.y): ', add(obj.x, obj.y), ', obj.x: ', obj.x, ', obj.y: ', obj.y)
+    console.log('origin object: ', obj);
+    changeObj(obj);
+    console.log('changed object: ', obj);
 </script>
 </body>
 </html>
