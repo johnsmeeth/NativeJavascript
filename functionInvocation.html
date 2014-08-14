@@ -5,7 +5,11 @@
     <title>Function invocation</title>
 </head>
 <body>
-Javascript function có thể được invoke theo 4 cách khác nhau, mỗi các chỉ khác nhau cách khởi tạo this.
+Javascript function có thể được invoke theo 4 cách khác nhau, mỗi các chỉ khác nhau cách khởi tạo this:
+    + invoke function as function: this là window
+    + invoke function as a method: this là ownerObject của method.
+    + invoke function with a function constructor: this là new object.'
+    + invoke function with a function method: this là ownerObject nếu trong strict mode, ngoài strict mode nếu ownerObject là null hoặc undefined this là window.
 1. This keyword:
     - this là object sở hữu current code.
     - giá trị của this trong function là object sở hữu function đó.
@@ -13,5 +17,29 @@ Javascript function có thể được invoke theo 4 cách khác nhau, mỗi cá
 2. invoke a function:
     - code trong 1 function chỉ được thực thi khi ta invoke function đó.
 3. invoke a function as function:
+    - Trong javascript khi ta define 1 function global trong 1 file html xong ta có thể gọi nó bất kỳ đâu trong page đó. Có thể ta sẽ nghĩ
+    function ta vừa định nghĩa không thuộc về object nào nhưng thực tế trong javascript luôn tồn tại 1 default global object, mà trong html page
+    default global object này chính là window vì thế ta có thể nói mọi function ta define ở đây đều thuộc về object window vì thế ta có thể
+    invoke function ta đã define bằng tên của nó hoặc window.functionName (cách này function của ta như là method của object nó thuộc về).
+4. global object:Khi invoke 1 function không thông qua object nó thuộc về thì giá trị của this sẽ trở thành global object. Trong web browser,
+    global object là window vì thế this sẽ là window.
+5. invoke function as a method: Ta có thể define function là method của 1 object nào đó, khi invoke function này (method) thông qua object sở hữu nó
+thì this sẽ là object sở hữu function đó.
+6. invoke a function with a function constructor: Với cách này giá trị của this là object được tạo bằng từ khóa new dựa trên function constructor.
+7. invoke a function with a function method:
+    - trong javascript function cũng là object nên nó cũng có properties và method.
+    - call() và apply() là 2 method được định nghĩa sẵn của function. Cả 2 method này được dùng để invoke 1 function, khi dùng 2 method này
+    bắt buộc phải truyền owner object vào tham số đầu tiên.
+        + call(): nhận argument phân tách nhau bởi dấu phảy.
+        + apply(): nhận argument bằng 1 mảng.
+    - Giá trị của this:
+        + trong strict mode: giá trị của this chính là owner object được truyền vào là tham số đầu tiên, ngay cả khi arguments không phải là object.
+        + non-strict mode: Nếu owner object là null hoặc undefined thì this sẽ mang giá trị global object (window).
+    => bản chất của 2 method này là cho phép ta thiết lập value của this và invoke 1 function như là 1 method mới của 1 existing object.
+    - cú pháp:
+        functionName.call/apply(ownerObject, params); // Gọi functionName như là new method của ownerObject, nôm na kiểu như ownerobject.functionName
+                                                // với các params
+                                                // functionName là 1 function ta define global bình thường.
+                                                // vấn đề là functionName không thuộc nằm trong owner object trước khi chạy call() hoặc apply
 </body>
 </html>
