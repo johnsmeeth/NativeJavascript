@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Javascript function parameters</title>
+</head>
+<body>
+<script>
+    function person(name, age, sex) {
+        var fullname = arguments;
+        console.log('fullname: ', fullname);
+    }
+
+    person('a', 2, 'male', 656);
+</script>
+</body>
+</html>

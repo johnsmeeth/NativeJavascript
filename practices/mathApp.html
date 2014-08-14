@@ -3,23 +3,52 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Math App</title>
+    <link rel="stylesheet" href="css/mathApp.css"/>
 </head>
 <body>
 <div id="wrapper">
+    <div id="operator">
         <fieldset>
             <legend>Tam giac</legend>
-            <div id="input">
-                Enter a: <input id="txta" type="text"/><br />
-                Enter b: <input id="txtb" type="text"/><br />
-                Enter c: <input id="txtc" type="text"/><br />
+            <div class="input">
+                Enter a: <input id="txta" type="text" value="3" /><br />
+                Enter b: <input id="txtb" type="text" value="4" /><br />
+                Enter c: <input id="txtc" type="text" value="5" /><br />
             </div>
-            <div id="result">
-                <textarea name="result" id="result" placeholder="Result...." cols="30" rows="10"></textarea>
-            </div>
-            <button>Calculate</button>
+
+            <button onclick="allTamGiac()">Calculate</button>
         </fieldset>
+
+        <fieldset>
+            <legend>Tam giac object</legend>
+            <div class="input">
+                Enter a: <input id="pta" type="text" value="3" /><br />
+                Enter b: <input id="ptb" type="text" value="4" /><br />
+                Enter c: <input id="ptc" type="text" value="5" /><br />
+            </div>
+            <button onclick="phuongTrinh()">Calculate</button>
+        </fieldset>
+    </div>
+
+    <div class="result">
+        <textarea name="result" id="result" placeholder="Result...." cols="60" rows="5"></textarea>
+    </div>
 </div>
 <!-- Load mathApp.js -->
 <script src="js/mathApp.js"></script>
+<script>
+    function phuongTrinh(){
+        var tg = {
+            a: Number(document.getElementById('pta').value),
+            b: parseInt(document.getElementById('ptb').value),
+            c: Number(document.getElementById('ptc').value)
+        };
+        var result = document.getElementById('result');
+
+        var tgObb = new tamGiac(tg.a, tg.b, tg.c);
+        result.innerText = 'isTamGiac: ' + tgObb.isTamGiac() + ', chu vi: ' + tgObb.chuVi() + ', dien tich: ' + tgObb.dienTich();
+        console.log(tgObb.chuVi());
+    }
+</script>
 </body>
 </html>

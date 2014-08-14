@@ -1,1 +1,12 @@
 /** Created by Thanh Nguyen */
+div#operator {
+    float: left;
+    width: 765px;
+    margin-right: 15px;
+}
+div#result {
+    height: 100px;overflow: hidden;
+}
+textarea#result {
+    margin-top: 9px;
+}
