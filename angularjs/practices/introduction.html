@@ -5,9 +5,9 @@
     <title>Angularjs introduction practice</title>
 </head>
 <body>
-<div ng-app="app">
-    <input type="text" ng-model="nameInput" /> <br />
-    <strong ng-bind="nameInput"></strong>
+<div data-ng-app="app" data-ng-init="age=26">
+    <input type="text" data-ng-model="nameInput" /> <br />
+    <strong data-ng-bind="nameInput"></strong> <strong data-ng-bind="age"></strong>
 </div>
 
 <script src="libs/angular.min.js"></script>
