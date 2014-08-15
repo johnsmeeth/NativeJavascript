@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Function closures</title>
+</head>
+<body>
+<pre>
+Các variable trong javascript có thể thuộc local scope hoặc globale scope. các biến private có thể tạo khả năng closure.
+1. Global variable:
+    - 1 function có thể truy cập tất cả các variable được define inside function đó.
+    - 1 function cũng có thể truy cập các variable được define outside function đó.
+    - variables định nghĩa trong function với từ khóa var sẽ là local variables. local variables chỉ được sử dụng bên trong function nó thuộc về.
+    - varialbes được định nghĩa không bởi từ khóa var (ngay cả khi define variable inside 1 function) hoặc bên ngoài function là global variables.
+    global variables thuộc về window object nên nó sẽ có thể được truy cập bởi các function khác, script code trong webpage (window) đó.
+2. a counter dilemma:
+3. a nested function:
+    - function trong javascript có thể truy cập global scope.
+    - thực tế trong javascript function có thể truy cập tới scope above(scope bao nó).
+    - javascript hỗ trợ nested function và nested function này có thể truy cập tới scope bao nó.
+4. javascript clusure:
+    - 1 closure là 1 function có thể truy cập tới parent scope của nó ngay cả khi parent scope của nó đã close.
+    - có thể hiểu nôm na khi invoke function closure như sau: vì function closure thường return 1 function vô danh khác, function vô danh này
+    chính là function truy cập vào các private variable của function chính. cơ chế hoạt động của function closure như sau, khi invoke function closure
+    nó sẽ kiểm tra
+        + nếu là lần gọi đầu tiên thì nó sẽ khởi tạo mọi thứ và return về như function bình thường.
+        + nếu nó được invoke không phải lần đầu tiên, nó sẽ không thực hiện các code trong function chính mà chỉ chạy code của function ở return
+        của function chính dựa trên (thừa kế) những kết quả đã tính toán ở lần invoke trước.
+
+</pre>
+</body>
+</html>

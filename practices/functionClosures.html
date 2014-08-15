@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Function closures practice</title>
+</head>
+<body>
+<script>
+    // nested function
+    function add() {
+        var counter = 0;
+
+        function plus() {
+            return counter++;
+        }
+
+        plus(); plus(); plus();
+
+        return counter;
+    }
+
+    console.log('add(): ', add());
+
+
+    // function closure
+    console.log("============== function closure =================");
+    var sumary = (function() {
+        var counter = 0;
+        console.log('parent This: ', this, ', counter: ', counter);
+
+        return function() {
+            counter++;
+            console.log('child this: ', this, ', counter: ', counter);
+
+            return counter;
+        }
+    })();
+
+    console.log('sumary(): ', sumary());
+    console.log('sumary(): ', sumary());
+    //console.log('sumary(): ', sumary());
+</script>
+</body>
+</html>
