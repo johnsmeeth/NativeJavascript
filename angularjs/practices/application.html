@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Full Angularjs application practice</title>
+    <link rel="stylesheet" href="css/noteApp.css"/>
+</head>
+<body>
+
+<div data-ng-app="noteApp">
+    <div class="box" data-ng-controller="noteController">
+        <h1>Simple note</h1>
+        <textarea name="" id="" cols="30" rows="10" data-ng-model="message"></textarea>
+        <p>
+            <button data-ng-click="save()">Save</button>
+            <button data-ng-click="clear()">Clear</button>
+        </p>
+        <p>Number of characters left: <span data-ng-bind="left()"></span></p>
+    </div>
+
+    <div data-ng-controller="bindModelController">
+        Enter name: <input type="text" data-ng-model="name"/>
+        Entered name: <span>{{name}}</span>
+        <button data-ng-click="showScope(name)">Show $scope</button>
+    </div>
+</div>
+
+<script src="libs/angular.min.js"></script>
+<script src="scripts/noteApp.js"></script>
+<script src="scripts/noteController.js"></script>
+<script src="scripts/bindModelController.js"></script>
+</body>
+</html>

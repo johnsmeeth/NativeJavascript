@@ -8,12 +8,18 @@
 <div data-ng-app="app" data-ng-init="age=26">
     <input type="text" data-ng-model="nameInput" /> <br />
     <strong data-ng-bind="nameInput"></strong> <strong data-ng-bind="age"></strong>
+    <div data-ng-controller="myCtrl">
+        <div>{{sex}}</div>
+    </div>
 </div>
 
 <script src="libs/angular.min.js"></script>
 
 <script>
     var app = angular.module('app', []);
+    app.controller('myCtrl', function($scope){
+        $scope.sex = "male";
+    });
 </script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angularjs controller practice</title>
+</head>
+<body>
+
+<div data-ng-app="">
+    <div data-ng-controller="personController">
+        Name:  <input type="text" data-ng-model="person.name"/>
+        age: <input type="text" data-ng-model="person.age"/>
+        <hr/>
+        Data after changed, Hello <strong ng-bind="person.name"></strong>, your age <strong>{{person.age}}</strong>
+    </div>
+</div>
+
+<hr/>
+Giải thích:
+    - angularjs application được định nghĩa bởi directive data-ng-app. chỉ định application chạy bên trong div element.
+    - ng-controller: Xác định tên cho object controller.
+    - function personController: a standard javascript object constructor.
+    - object controller: có 1 property là $scope.person
+        + person object: có 2 properties là name và age.
+    - ng-model: bind input field tới controller object properties (name, age)
+<script src="libs/angular.min.js"></script>
+<script>
+    function personController($scope) {
+        $scope.person = {
+            name: 'John Smeeth',
+            age: 26
+        };
+    }
+</script>
+</body>
+</html>

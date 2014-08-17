@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ANgularjs directives</title>
+</head>
+<body>
+Directive giúp mở rộng attributes của HTML element.
+- Các directives thường sử dụng:
+    - ng-app: Xác định HTML element owner angularjs application, nói cách khác directive này xác định angular app chạy trong element nào.
+    vì thế trong 1 webpage có thể có nhiều angular app chạy ở các element khác nhau.
+    - ng-repeat: vòng lặp sử dụng trong array, array of objects.
+    - ng-model: bind HTML element tới angular application, Các model được bind tới application sẽ trở thành các variable của application (model phai co gia tri)
+    tác dụng của directive này để:
+        + provide type validation for application data (number, email, required).
+        + provide status for application data (invalid, dirty, touched, error...)
+        + provide css classes for HTML element.
+        + bind html element to html form.
+- data binding: là đồng bộ hóa application data với angularjs expression. việc đồng bộ có thể là:
+    + đồng bộ dữ liệu từ angular app lên html view thông qua expression (double curly).
+    + đồng bộ dữ liệu (bind dữ liệu) từ html view tới angular app.
+</body>
+</html>

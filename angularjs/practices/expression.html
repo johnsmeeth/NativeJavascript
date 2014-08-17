@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>angularjs expression</title>
+</head>
+<body>
+
+<div data-ng-app="" data-ng-init="quality=5; cost=10; person={name: 'Thanh Nguyen', age: 26}; cars=['Mercedes', 'Audi', 'BMW']">
+    <div>total: {{quality * cost}} for {{person.name}}</div>
+    <ol>
+        <li data-ng-repeat="car in cars">{{car}}</li>
+    </ol>
+</div>
+
+
+<script src="libs/angular.min.js"></script>
+<script>
+
+
+</script>
+</body>
+</html>
