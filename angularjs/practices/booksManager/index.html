@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="bookManager">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Book Manager Application for SRISAI</title>
+    <link rel="stylesheet" href="styles/styles.css"/>
+</head>
+<body>
+<div id="wrapper" ng-controller="productController as productCtrl">
+    <!-- title -->
+    <div id="title">
+        <div id="top">
+            <p>Trường Đại Học Quốc Gia Hà Nội</p>
+            <strong>VIỆN NGHIÊN CỨU KHOA HỌC BIỂN VÀ HẢI ĐẢO</strong>
+        </div>
+        <hr class="faded" />
+        <h1>HỆ THỐNG QUẢN LÝ TÀI LIỆU</h1>
+        <hr class="carved" />
+    </div>
+
+    <div id="filter">
+        <fieldset>
+            <legend>Tìm sách</legend>
+            Nhập từ khóa: <input type="text" class="searchText" ng-model="searchText" placeholder="Nhập từ khóa cần tìm kiếm rồi ấn Enter hoặc click vào Tìm ..."/>
+            <button class="searchButton">Tìm</button>
+            <div id="findOption">
+                <input type="radio" name="searchType" value="bookName" /> Tên sách
+                <input type="radio" name="searchType" value="author" /> Tác giả
+                <input type="radio" name="searchType" value="location" /> Địa lý
+            </div>
+        </fieldset>
+    </div>
+    <table id="products">
+        <tbody>
+            <tr>
+                <th>STT</th>
+                <th>Tên sách</th>
+                <th>Mô tả</th>
+                <th>Tác giả</th>
+                <th>Đánh giá</th>
+            </tr>
+            <tr ng-repeat="product in productCtrl.products | filter:searchText">
+                <td>{{$index + 1}}</td>
+                <td>
+                    <img class="productImg" ng-src="{{product.images[0].thumbnail}}" alt=""/>
+                    <p>{{product.name}}</p>
+
+                </td>
+                <td>{{product.description}}</td>
+                <td>{{product.author}}</td>
+                <td>
+                    <div ng-repeat="review in product.reviews">
+                        <ul class="review">
+                            <li>Stars: {{review.stars}}</li>
+                            <li>content: {{review.body}}</li>
+                            <li>author: {{review.author}}</li>
+                        </ul>
+                        <hr class="carved"/>
+                    </div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- products -->
+
+</div>
+
+
+<!-- Load script libraries -->
+<script src="scriptLibs/angular.min.js"></script>
+
+<!-- Load scripts -->
+<script src="scripts/app.js"></script>
+
+</body>
+</html>

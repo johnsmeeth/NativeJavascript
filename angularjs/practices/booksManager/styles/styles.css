@@ -1,0 +1,111 @@
+* {margin: 0; padding: 0}
+
+div#wrapper {
+    width: 900px;
+    margin: 0 auto;
+    background-color: rgba(245, 248, 248, 0.71);
+}
+
+#title {
+    padding-bottom: 20px;
+}
+#title h1 {
+    text-align: center;
+    margin-top: 25px;
+}
+
+div#top {
+    width: 45%;
+    text-align: center;
+    padding-top: 10px;
+}
+div#top + p {
+    text-align: center;
+    margin-top: 20px;
+}
+div#top strong  {
+    font-style: normal;
+}
+
+table#products {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+#products th {
+    font-size: 1.4em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #A7C942;
+    color: #fff;
+}
+
+#products td, #products th {
+    font-size: 1.2em;
+    border: 1px solid #98bf21;
+    padding: 3px 7px 2px 7px;
+}
+
+ul.review {
+    list-style: none;
+}
+
+img.productImg {
+    width: 200px;
+}
+
+div#filter fieldset {
+    border: solid 1px;
+    text-align: center;
+    box-shadow: 0 0 8px 4px #cdcdcd;
+    padding: 10px;
+}
+div#filter {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+input.searchText {
+    width: 80%;
+    height: 30px;
+    box-shadow: 0 0 6px 1px red;
+    border: none;
+}
+div#findOption {
+    margin-top: 5px;
+}
+button.searchButton {
+    width: 45px;
+}
+
+/* separate and rule */
+.faded {
+    clear: both;
+    float: none;
+    width: 60%;
+    height: 1px;
+    margin: 1.4em auto;
+    border: none;
+    background: #ddd;
+    background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0, rgb(255, 255, 255)), color-stop(0.1, rgb(221, 221, 221)), color-stop(0.9, rgb(221, 221, 221)), color-stop(1, rgb(255, 255, 255)));
+}
+.carved {
+    clear: both;
+    float: none;
+    width: 60%;
+    height: 2px;
+    margin: 1.4em auto;
+    border: none;
+    background: #ddd;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, rgb(221, 221, 221)), color-stop(0.5, rgb(255, 255, 255)));
+}
