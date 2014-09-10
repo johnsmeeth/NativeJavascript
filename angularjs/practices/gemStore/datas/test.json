@@ -1,0 +1,33 @@
+[
+    {
+        "name": "Audi A4",
+        "price": 200,
+        "description": "A modern model of Audi corporation with specifications as strong engine, auto drive, safely stop",
+        "canPurchase": false,
+        "reviews": [
+            {
+                "stars": 5,
+                "body": "My dream is this auto, it look pretty all of body",
+                "author": "Johnsmeeth@gmail.com"
+            },
+            {
+                "stars": 4,
+                "body": "A product of a famous brand, it good for bussiness.",
+                "author": "dungnt@gmail.com"
+            }
+        ]
+    },
+    {
+        "name": "BMW Q5",
+        "price": 250,
+        "description": "Nice SUV for your family with all modern features, best for your family travel",
+        "canPurchase": true,
+        "reviews": [
+            {
+                "stars": 5,
+                "body": "a good product",
+                "author": "obama@gmail.com"
+            }
+        ]
+    }
+]

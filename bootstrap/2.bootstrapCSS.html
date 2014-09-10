@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Bootstrap css</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-left">left</h2>
+            <h2 class="text-center">center</h2>
+            <h2 class="text-right">right</h2>
+            <h2 class="text-justify">justify</h2>
+        </div>
+    </div>
+    <!-- list -->
+    <div class="row">
+        <ul class="list-unstyled">
+            <li>Item 1</li>
+            <li>Item 1</li>
+            <li>Item 1</li>
+            <li>Item 1</li>
+        </ul>
+    </div>
+
+    <!-- form -->
+    <form role="form">
+        <div class="form-group has-warning">
+            <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Type your email ..."/>
+            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input class="form-control" type="password" id="inputPassword" placeholder="Password"/>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"/> Remember
+            </label>
+        </div>
+        <button class="btn btn-default" type="submit">Submit <span class="glyphicon glyphicon-check"></span></button>
+    </form>
+
+    <!-- button -->
+    <button class="btn btn-primary btn-lg">Primary</button>
+    <button class="btn btn-success btn-xs active">Success</button>
+    <button class="btn btn-warning btn-sm">Warning</button>
+    <button class="btn btn-danger btn-lg">Danger</button>
+
+    <!-- table -->
+    <div class="row">
+    <table class="table table-striped">
+        <th>No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Tel</th>
+        <th>Address</th>
+        <tr>
+            <td>1</td>
+            <td>Obama</td>
+            <td>obama@gov.us</td>
+            <td>0989777888</td>
+            <td>Olaka Newyork</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Putin</td>
+            <td>putin@gov.ru</td>
+            <td>0976111222</td>
+            <td>Moscow</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Cameroon</td>
+            <td>cameroon@gov.uk</td>
+            <td>0987555666</td>
+            <td>London</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Abe</td>
+            <td>abe@gov.jp</td>
+            <td>0985444888</td>
+            <td>Tokyo</td>
+        </tr>
+    </table>
+    </div>
+</div>
+
+<!-- load bootstrap javascript -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
